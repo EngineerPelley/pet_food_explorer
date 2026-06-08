@@ -1,0 +1,12 @@
+# Normalize line endings on checkin; let Git pick native on checkout for text.
+* text=auto
+
+# The Gradle wrapper shell script MUST stay LF or it breaks on macOS/Linux.
+gradlew text eol=lf
+*.sh    text eol=lf
+
+# The Windows batch wrapper should be CRLF.
+gradlew.bat text eol=crlf
+
+# Treat the wrapper jar as binary (never line-ending munged).
+*.jar binary

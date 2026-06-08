@@ -1,0 +1,5 @@
+/* Bootstrap 5 is imported globally from the npm package (see main.tsx).
+   This file holds only small app-specific tweaks. */
+body {
+  background-color: #f8f9fa;
+}
