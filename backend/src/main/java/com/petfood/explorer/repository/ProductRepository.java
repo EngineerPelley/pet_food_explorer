@@ -1,6 +1,14 @@
-package com.petfood.explorer.product;
+package com.petfood.explorer.repository;
 
+import com.petfood.explorer.dto.BrandSummary;
+import com.petfood.explorer.dto.IngredientView;
+import com.petfood.explorer.dto.PetTypeRef;
+import com.petfood.explorer.dto.ProductTypeRef;
+import com.petfood.explorer.view.ProductDetail;
+import com.petfood.explorer.view.ProductSummary;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Repository;
@@ -25,11 +33,12 @@ public class ProductRepository {
         this.jdbc = jdbc;
     }
 
-    // -- Product list ------------------------------------------------------
+    // -- Product list (with optional ingredient filtering) -----------------
 
-    // Join each food to its brand (required) and product type (optional, hence
-    // LEFT JOIN) so the list can show names rather than raw ids.
-    private static final String FIND_ALL = """
+    // Base list query: each food with its brand (required) and product type
+    // (optional, hence LEFT JOIN) so the list shows names, not raw ids. The
+    // WHERE conditions and ORDER BY are appended dynamically by search().
+    private static final String FIND_ALL_BASE = """
             SELECT f.food_id,
                    f.name,
                    b.name  AS brand_name,
@@ -38,11 +47,60 @@ public class ProductRepository {
             FROM food f
             JOIN brand b              ON b.brand_id = f.brand_id
             LEFT JOIN product_type pt ON pt.product_type_id = f.product_type_id
-            ORDER BY f.name
             """;
 
-    public List<ProductSummary> findAll() {
-        return jdbc.sql(FIND_ALL)
+    /**
+     * Lists products, optionally filtered by ingredients the food must contain
+     * ({@code wanted}) and ingredients it must not contain ({@code unwanted}).
+     *
+     * <p>Each wanted term adds a correlated {@code EXISTS} subquery -- so a food
+     * must match <em>every</em> wanted term -- and each unwanted term adds a
+     * {@code NOT EXISTS} subquery -- so a food matching <em>any</em> unwanted
+     * term is excluded. Terms match case-insensitively as substrings (LIKE).
+     * Null/blank terms are dropped, so "no filter" returns the full list.
+     */
+    public List<ProductSummary> search(List<String> wanted, List<String> unwanted) {
+        StringBuilder sql = new StringBuilder(FIND_ALL_BASE);
+        Map<String, Object> params = new HashMap<>();
+
+        // WHERE 1 = 1 lets every optional condition below be appended uniformly
+        // with "AND ...", with no special-casing of the first one.
+        sql.append("WHERE 1 = 1\n");
+
+        int i = 0;
+        for (String term : clean(wanted)) {
+            String key = "w" + i++;
+            // Keep the food only if it has an ingredient matching this term.
+            sql.append("""
+                    AND EXISTS (
+                        SELECT 1
+                        FROM food_ingredient fi
+                        JOIN ingredient ing ON ing.ingredient_id = fi.ingredient_id
+                        WHERE fi.food_id = f.food_id AND ing.name LIKE :%s
+                    )
+                    """.formatted(key));
+            params.put(key, "%" + term + "%");
+        }
+
+        int j = 0;
+        for (String term : clean(unwanted)) {
+            String key = "u" + j++;
+            // Drop the food if it has any ingredient matching this term.
+            sql.append("""
+                    AND NOT EXISTS (
+                        SELECT 1
+                        FROM food_ingredient fi
+                        JOIN ingredient ing ON ing.ingredient_id = fi.ingredient_id
+                        WHERE fi.food_id = f.food_id AND ing.name LIKE :%s
+                    )
+                    """.formatted(key));
+            params.put(key, "%" + term + "%");
+        }
+
+        sql.append("ORDER BY f.name");
+
+        return jdbc.sql(sql.toString())
+                .params(params)
                 .query((rs, rowNum) -> new ProductSummary(
                         rs.getLong("food_id"),
                         rs.getString("name"),
@@ -50,6 +108,17 @@ public class ProductRepository {
                         rs.getString("product_type_name"),
                         rs.getBigDecimal("calories_per_cup")))
                 .list();
+    }
+
+    /** Drops null/blank terms and trims the rest; a null list becomes empty. */
+    private static List<String> clean(List<String> terms) {
+        if (terms == null) {
+            return List.of();
+        }
+        return terms.stream()
+                .filter(t -> t != null && !t.isBlank())
+                .map(String::trim)
+                .toList();
     }
 
     // -- Product detail ----------------------------------------------------

@@ -1,4 +1,4 @@
-package com.petfood.explorer.web;
+package com.petfood.explorer.error;
 
 /**
  * Thrown by services when a requested resource does not exist. Mapped to a 404

@@ -1,5 +1,9 @@
-package com.petfood.explorer.product;
+package com.petfood.explorer.view;
 
+import com.petfood.explorer.dto.BrandSummary;
+import com.petfood.explorer.dto.IngredientView;
+import com.petfood.explorer.dto.PetTypeRef;
+import com.petfood.explorer.dto.ProductTypeRef;
 import java.math.BigDecimal;
 import java.util.List;
 

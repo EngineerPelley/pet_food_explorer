@@ -1,4 +1,4 @@
-package com.petfood.explorer.product;
+package com.petfood.explorer.view;
 
 import java.math.BigDecimal;
 

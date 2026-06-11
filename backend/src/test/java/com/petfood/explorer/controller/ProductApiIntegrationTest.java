@@ -1,7 +1,9 @@
-package com.petfood.explorer.product;
+package com.petfood.explorer.controller;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import com.petfood.explorer.view.ProductDetail;
+import com.petfood.explorer.view.ProductSummary;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

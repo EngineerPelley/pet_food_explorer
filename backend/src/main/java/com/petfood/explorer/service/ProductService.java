@@ -1,6 +1,9 @@
-package com.petfood.explorer.product;
+package com.petfood.explorer.service;
 
-import com.petfood.explorer.web.NotFoundException;
+import com.petfood.explorer.error.NotFoundException;
+import com.petfood.explorer.repository.ProductRepository;
+import com.petfood.explorer.view.ProductDetail;
+import com.petfood.explorer.view.ProductSummary;
 import java.util.List;
 import org.springframework.stereotype.Service;
 
@@ -17,8 +20,13 @@ public class ProductService {
         this.repository = repository;
     }
 
-    public List<ProductSummary> listProducts() {
-        return repository.findAll();
+    /**
+     * Lists products, optionally filtered by ingredients to include
+     * ({@code wanted}) and exclude ({@code unwanted}). Null lists mean "no
+     * filter on that side".
+     */
+    public List<ProductSummary> listProducts(List<String> wanted, List<String> unwanted) {
+        return repository.search(wanted, unwanted);
     }
 
     public ProductDetail getProduct(long id) {

@@ -1,4 +1,4 @@
-package com.petfood.explorer.web;
+package com.petfood.explorer.error;
 
 import java.time.OffsetDateTime;
 

@@ -1,4 +1,4 @@
-package com.petfood.explorer.product;
+package com.petfood.explorer.dto;
 
 /**
  * Product type reference (dry, wet, raw, ...). Nullable on a food, so this may be

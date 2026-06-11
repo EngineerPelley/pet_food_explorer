@@ -12,8 +12,18 @@ async function getJson<T>(path: string): Promise<T> {
   return response.json() as Promise<T>;
 }
 
-export function fetchProducts(): Promise<ProductSummary[]> {
-  return getJson<ProductSummary[]>('/products');
+// Lists products, optionally filtered by ingredients to include (`wanted`) and
+// exclude (`unwanted`). Each term becomes a repeated query param, e.g.
+// /products?wanted=chicken&wanted=rice&unwanted=beef
+export function fetchProducts(
+  wanted: string[] = [],
+  unwanted: string[] = [],
+): Promise<ProductSummary[]> {
+  const params = new URLSearchParams();
+  wanted.forEach((w) => params.append('wanted', w));
+  unwanted.forEach((u) => params.append('unwanted', u));
+  const query = params.toString();
+  return getJson<ProductSummary[]>(`/products${query ? `?${query}` : ''}`);
 }
 
 export function fetchProduct(id: number | string): Promise<ProductDetail> {

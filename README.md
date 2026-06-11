@@ -30,8 +30,12 @@ pet_food_explorer/
 │       │   ├── java/com/petfood/explorer/
 │       │   │   ├── PetFoodExplorerApplication.java
 │       │   │   ├── config/WebCorsConfig.java
-│       │   │   ├── web/                 # ApiError, GlobalExceptionHandler, NotFoundException
-│       │   │   └── product/            # records + controller/service/repository
+│       │   │   ├── controller/          # ProductController (REST endpoints)
+│       │   │   ├── service/             # ProductService (business logic)
+│       │   │   ├── repository/          # ProductRepository (hand-written SQL)
+│       │   │   ├── dto/                 # request/lookup records (BrandSummary, IngredientView, …)
+│       │   │   ├── view/                # API response records (ProductSummary, ProductDetail)
+│       │   │   └── error/               # ApiError, GlobalExceptionHandler, NotFoundException
 │       │   └── resources/
 │       │       ├── application.yml
 │       │       └── db/migration/        # Flyway: V1__schema.sql, V2__seed_data.sql
@@ -194,7 +198,7 @@ npm run format   # Prettier
 
 | Method | Path                 | Description                                   |
 | ------ | -------------------- | --------------------------------------------- |
-| GET    | `/api/products`      | List all products (food + brand + type names) |
+| GET    | `/api/products`      | List products (food + brand + type names). Optional repeatable `wanted` / `unwanted` query params filter by ingredient, e.g. `/api/products?wanted=chicken&wanted=rice&unwanted=beef` — a food is kept only if it contains every `wanted` ingredient and none of the `unwanted` ones. |
 | GET    | `/api/products/{id}` | One product with brand, type, pet types, and label ingredients |
 
 Errors are returned as a consistent JSON shape:
