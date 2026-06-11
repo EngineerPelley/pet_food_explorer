@@ -42,3 +42,8 @@ Configured in `application.yml` via env vars with local defaults: user
 `petfood` / password `petfood`, database `petfood` (tests:
 `application-test.yml`, database `petfood_test`). One-time setup SQL for
 databases and the user is in the project README.
+
+## Related
+
+- Architecture: [[overview]] · [[backend]] (the only thing that talks to this database)
+- Knowledge: [[sql-and-relational-databases|Relational databases & SQL]] · [[flyway-migrations|Flyway migrations]]

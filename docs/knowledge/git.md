@@ -25,6 +25,10 @@ over time so you can see history, undo mistakes, and collaborate.
 - `.gitignore` — why `node_modules/` and build output are not committed.
 - Undoing things safely (`git restore`, `git revert`).
 
+## Related
+
+- Knowledge: [[node-npm-vite|Node, npm & Vite]] (why `node_modules/` is gitignored) · [[flyway-migrations|Flyway migrations]] (versioning applied to the database schema)
+
 ## Notes
 
 (none yet)

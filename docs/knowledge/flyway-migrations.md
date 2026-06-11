@@ -24,6 +24,11 @@ order. The schema is therefore version-controlled in git like code.
 - Why the **test** profile allows `clean` (wipe everything and re-run all
   migrations) so each test run starts from identical, known data.
 
+## Related
+
+- Knowledge: [[sql-and-relational-databases|Relational databases & SQL]] (migrations are plain SQL) · [[git|Git]] (same idea — versioned history — applied to the schema)
+- Architecture: [[database]]
+
 ## Notes
 
 (none yet)

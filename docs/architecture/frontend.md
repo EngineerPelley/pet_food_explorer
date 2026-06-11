@@ -42,3 +42,9 @@ src/
 - `npm run dev` — Vite dev server on port 5173 with hot reload.
 - `npm run build` — TypeScript type-check (`tsc -b`) then production bundle.
 - `npm run lint` / `npm run format` — ESLint / Prettier.
+
+## Related
+
+- Architecture: [[overview]] · [[backend]]
+- Features served: [[product-list]] · [[product-detail]] · [[ingredient-filtering]]
+- Knowledge: [[react|React]] · [[typescript|TypeScript]] · [[node-npm-vite|Node, npm & Vite]] · [[html-css-bootstrap|HTML, CSS & Bootstrap]] · [[http-and-rest|HTTP & REST]]

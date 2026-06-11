@@ -23,6 +23,11 @@ Modern Java features this project uses that may be newer than coursework:
   instead of returning `null` (see `ProductRepository.findById`).
 - **Lambdas as row mappers** — `(rs, rowNum) -> new ProductSummary(...)`.
 
+## Related
+
+- Knowledge: [[spring-boot|Spring Boot]] (the framework on top) · [[jdbc-and-jdbcclient|JDBC & JdbcClient]] (Java ↔ database) · [[typescript|TypeScript]] (the frontend's typed language — compare and contrast)
+- Architecture: [[backend]]
+
 ## Notes
 
 (none yet)

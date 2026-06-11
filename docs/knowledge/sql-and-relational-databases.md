@@ -35,6 +35,12 @@ Roughly in dependency order:
 - **LIKE and case-insensitive matching.**
 - Indexes — why `KEY idx_food_brand` exists.
 
+## Related
+
+- Knowledge: [[jdbc-and-jdbcclient|JDBC & JdbcClient]] (running SQL from Java) · [[flyway-migrations|Flyway migrations]] (how the schema gets created)
+- Architecture: [[database]] (this project's actual schema)
+- Features: [[ingredient-filtering]] (EXISTS / NOT EXISTS in the wild)
+
 ## Notes
 
 (none yet)

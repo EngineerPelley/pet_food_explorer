@@ -13,15 +13,15 @@ Levels used in each file:
 
 | Topic                                                  | Level      | Why it matters here                                    |
 | ------------------------------------------------------ | ---------- | ------------------------------------------------------ |
-| [Java](java.md)                                        | solid      | The backend language                                   |
-| [HTTP & REST APIs](http-and-rest.md)                   | introduced | How frontend and backend talk                          |
-| [Spring Boot](spring-boot.md)                          | introduced | The backend framework                                  |
-| [Relational databases & SQL](sql-and-relational-databases.md) | new | Where the data lives; this project hand-writes its SQL |
-| [JDBC & JdbcClient](jdbc-and-jdbcclient.md)            | new        | How Java code runs SQL                                 |
-| [Flyway migrations](flyway-migrations.md)              | new        | How the database schema is created and versioned       |
-| [Gradle](gradle.md)                                    | introduced | Builds and runs the backend                            |
-| [Git](git.md)                                          | introduced | Version control for the whole project                  |
-| [React](react.md)                                      | new        | The frontend UI library                                |
-| [TypeScript](typescript.md)                            | new        | The frontend language (typed JavaScript)               |
-| [Node, npm & Vite](node-npm-vite.md)                   | new        | Frontend tooling: dependencies and the dev server      |
-| [HTML, CSS & Bootstrap](html-css-bootstrap.md)         | new        | What the browser actually renders                      |
+| [[java\|Java]]                                         | solid      | The backend language                                   |
+| [[http-and-rest\|HTTP & REST APIs]]                    | introduced | How frontend and backend talk                          |
+| [[spring-boot\|Spring Boot]]                           | introduced | The backend framework                                  |
+| [[sql-and-relational-databases\|Relational databases & SQL]] | new  | Where the data lives; this project hand-writes its SQL |
+| [[jdbc-and-jdbcclient\|JDBC & JdbcClient]]             | new        | How Java code runs SQL                                 |
+| [[flyway-migrations\|Flyway migrations]]               | new        | How the database schema is created and versioned       |
+| [[gradle\|Gradle]]                                     | introduced | Builds and runs the backend                            |
+| [[git\|Git]]                                           | introduced | Version control for the whole project                  |
+| [[react\|React]]                                       | new        | The frontend UI library                                |
+| [[typescript\|TypeScript]]                             | new        | The frontend language (typed JavaScript)               |
+| [[node-npm-vite\|Node, npm & Vite]]                    | new        | Frontend tooling: dependencies and the dev server      |
+| [[html-css-bootstrap\|HTML, CSS & Bootstrap]]          | new        | What the browser actually renders                      |

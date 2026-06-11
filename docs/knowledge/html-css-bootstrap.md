@@ -24,6 +24,11 @@ so the markup stays explicit.
 - The browser **dev tools** (F12) — inspecting elements to see which styles
   apply; also the Network tab to watch the API calls happen.
 
+## Related
+
+- Knowledge: [[react|React]] (JSX produces HTML; `className` applies the CSS classes)
+- Architecture: [[frontend]] (Bootstrap is imported once, globally, in `main.tsx`)
+
 ## Notes
 
 (none yet)

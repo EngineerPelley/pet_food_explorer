@@ -5,7 +5,7 @@
 ## What it does
 
 A page showing everything known about one pet food product, reached by
-clicking it in the product list.
+clicking it in the product list ([[product-list]]).
 
 ## User experience
 
@@ -34,3 +34,8 @@ clicking it in the product list.
 - Sub-ingredients (what a compound ingredient like "chicken meal" contains) —
   the data model supports them, but they are not shown yet.
 - Editing anything; the app is read-only.
+
+## Related
+
+- Features: [[product-list]] (where the user comes from)
+- How it's built: [[frontend]] (the page) · [[backend]] (the `/api/products/{id}` endpoint) · [[database]] (brand, pet types, and ingredients come from joined tables)

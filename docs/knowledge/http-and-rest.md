@@ -32,6 +32,12 @@ JSON. This is how the frontend gets its data from the backend.
 - How JSON maps to/from Java records automatically (Jackson) and to TypeScript
   types by hand.
 
+## Related
+
+- Knowledge: [[spring-boot|Spring Boot]] (serves HTTP on the backend) · [[react|React]] (consumes it on the frontend)
+- Architecture: [[overview]] (the frontend↔backend arrow is HTTP) · [[backend]] · [[frontend]]
+- Features: [[ingredient-filtering]] (query parameters in action)
+
 ## Notes
 
 (none yet)

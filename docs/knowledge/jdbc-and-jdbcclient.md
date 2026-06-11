@@ -27,6 +27,11 @@ SQL stays visible and learnable.
 - (Context) What an **ORM** is and why this project deliberately doesn't use
   one.
 
+## Related
+
+- Knowledge: [[java|Java]] (lambdas, records) · [[sql-and-relational-databases|Relational databases & SQL]] (the language being run) · [[spring-boot|Spring Boot]] (provides the configured `JdbcClient`)
+- Architecture: [[backend]] (the repository layer)
+
 ## Notes
 
 (none yet)

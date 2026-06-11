@@ -21,6 +21,11 @@ The behavior that must hold: what's required, what's optional, edge cases
 
 Things this feature deliberately does NOT do (to keep it small).
 
+## Related
+
+Wikilinks (`[[note-name]]`) to other features this touches, the architecture
+notes that describe how it's built, and the knowledge topics it exercises.
+
 ## Open questions
 
 Anything not yet decided.

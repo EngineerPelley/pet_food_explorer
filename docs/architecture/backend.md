@@ -52,10 +52,10 @@ All in `ProductRepository`; follow them for any new query:
 
 ## Endpoints
 
-| Method | Path                 | Returns                                          |
-| ------ | -------------------- | ------------------------------------------------ |
+| Method | Path                 | Returns                                                                                                                                                       |
+| ------ | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | GET    | `/api/products`      | `ProductSummary[]`; optional repeatable `wanted` / `unwanted` query params filter by ingredient (every wanted, no unwanted; case-insensitive substring match) |
-| GET    | `/api/products/{id}` | `ProductDetail` (brand, type, pet types, ingredients) or 404 |
+| GET    | `/api/products/{id}` | `ProductDetail` (brand, type, pet types, ingredients) or 404                                                                                                  |
 
 ## Configuration
 
@@ -69,3 +69,9 @@ port 8080, Flyway enabled, CORS origin.
 random port, `test` profile) against the real local `petfood_test` database
 and calls the endpoints over HTTP. The test profile lets Flyway **clean** the
 schema first, so every run starts from exactly the migration + seed data.
+
+## Related
+
+- Architecture: [[overview]] · [[database]] · [[frontend]]
+- Features served: [[product-list]] · [[product-detail]] · [[ingredient-filtering]]
+- Knowledge: [[spring-boot|Spring Boot]] · [[java|Java]] · [[jdbc-and-jdbcclient|JDBC & JdbcClient]] · [[sql-and-relational-databases|SQL]] · [[flyway-migrations|Flyway]] · [[http-and-rest|HTTP & REST]] · [[gradle|Gradle]]

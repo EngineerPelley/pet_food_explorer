@@ -13,8 +13,7 @@ what exists and pick one to look at in detail.
 2. Each product shows its name, the brand that makes it, the kind of product
    it is (dry, wet, treat, ...), and calories per cup.
 3. Products are listed alphabetically by name.
-4. Clicking a product takes the user to its detail page
-   ([product-detail.md](product-detail.md)).
+4. Clicking a product takes the user to its detail page ([[product-detail]]).
 
 ## Rules
 
@@ -27,5 +26,9 @@ what exists and pick one to look at in detail.
 
 - Paging or limiting the list (the catalog is small).
 - Searching by name or sorting by other columns.
-- Filtering — added later as its own feature
-  ([ingredient-filtering.md](ingredient-filtering.md)).
+- Filtering — added later as its own feature ([[ingredient-filtering]]).
+
+## Related
+
+- Features: [[product-detail]] · [[ingredient-filtering]]
+- How it's built: [[overview]] · [[frontend]] (the page) · [[backend]] (the `/api/products` endpoint)

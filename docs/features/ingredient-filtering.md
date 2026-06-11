@@ -4,7 +4,7 @@
 
 ## What it does
 
-On the product list, the user can narrow the list by ingredients: "only show
+On the product list ([[product-list]]), the user can narrow the list by ingredients: "only show
 foods that contain X" and "hide foods that contain Y". Useful for avoiding
 allergens (no beef) or requiring favorites (must have chicken).
 
@@ -34,3 +34,9 @@ allergens (no beef) or requiring favorites (must have chicken).
 
 - Autocomplete / suggesting ingredient names while typing.
 - Filtering by anything other than ingredients (brand, pet type, calories).
+
+## Related
+
+- Features: [[product-list]] (the page this filter lives on)
+- How it's built: [[backend]] (dynamic `EXISTS` / `NOT EXISTS` SQL) · [[frontend]] (filter inputs, repeated query params)
+- Knowledge it exercises: [[sql-and-relational-databases|SQL]] (subqueries) · [[http-and-rest|HTTP & REST]] (query parameters)

@@ -27,10 +27,15 @@ Spring Boot app.
   to a Java method, and `@PathVariable` / `@RequestParam` pull values out of
   the URL.
 - **Layered architecture** — why the code is split into controller → service →
-  repository (see `../architecture/backend.md`).
+  repository (see [[backend]]).
 - **Configuration** — `application.yml`, profiles (the `test` profile), and
   environment variable placeholders like `${DB_HOST:localhost}`.
 - Exception handling with `@RestControllerAdvice` (see `error/`).
+
+## Related
+
+- Knowledge: [[java|Java]] (the language underneath) · [[http-and-rest|HTTP & REST]] (what it serves) · [[jdbc-and-jdbcclient|JDBC & JdbcClient]] (how it reaches the database) · [[gradle|Gradle]] (how it's built and started)
+- Architecture: [[backend]]
 
 ## Notes
 

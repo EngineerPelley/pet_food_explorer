@@ -25,6 +25,11 @@ underlying JavaScript behaves differently from Java in important ways.
   browser never checks them; they only catch mistakes at build time.
 - `null` vs `undefined`, and optional fields (`source: string | null`).
 
+## Related
+
+- Knowledge: [[java|Java]] (the familiar reference point — similar types, different runtime) · [[react|React]] (what it's used to build here) · [[node-npm-vite|Node, npm & Vite]] (what compiles and serves it)
+- Architecture: [[frontend]] (`api/types.ts` mirrors the backend's records)
+
 ## Notes
 
 (none yet)

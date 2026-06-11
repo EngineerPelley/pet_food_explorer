@@ -24,6 +24,12 @@ page. The whole frontend is React.
   maps URLs like `/products/3` to page components without full page reloads.
 - Rendering lists with `.map()` and why each item needs a `key`.
 
+## Related
+
+- Knowledge: [[typescript|TypeScript]] (the language components are written in) · [[html-css-bootstrap|HTML, CSS & Bootstrap]] (what JSX produces and how it's styled) · [[http-and-rest|HTTP & REST]] (where the data comes from) · [[node-npm-vite|Node, npm & Vite]] (the tooling that runs it)
+- Architecture: [[frontend]]
+- Features: [[product-list]] · [[product-detail]]
+
 ## Notes
 
 (none yet)

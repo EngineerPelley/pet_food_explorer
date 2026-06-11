@@ -30,6 +30,11 @@ running.
 - Java **toolchains** — how the build pins Java 21 regardless of what's on
   the machine.
 
+## Related
+
+- Knowledge: [[java|Java]] (what it compiles) · [[spring-boot|Spring Boot]] (what `bootRun` starts) · [[node-npm-vite|Node, npm & Vite]] (the frontend's counterpart toolchain)
+- Architecture: [[backend]]
+
 ## Notes
 
 (none yet)

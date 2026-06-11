@@ -26,6 +26,11 @@ you work and packages it for production.
 - What `npm run build` produces and why a production site is just static
   files.
 
+## Related
+
+- Knowledge: [[typescript|TypeScript]] · [[react|React]] (what this toolchain builds) · [[gradle|Gradle]] (the backend's counterpart — compare `package.json` with `build.gradle.kts`) · [[git|Git]] (`node_modules/` is gitignored)
+- Architecture: [[frontend]]
+
 ## Notes
 
 (none yet)
