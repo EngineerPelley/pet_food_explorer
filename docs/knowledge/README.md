@@ -2,7 +2,7 @@
 
 One file per subject relevant to this project. Together these files model what
 David currently knows — they are read before teaching (to pitch explanations
-right) and updated after each feature (see `../process.md`, step 5).
+right) and updated after each feature (see `../../process.md`, step 5).
 
 Levels used in each file:
 - **solid** — David knows this; don't re-explain it.

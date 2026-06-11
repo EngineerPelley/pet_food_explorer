@@ -5,7 +5,7 @@
 ## What it does
 
 One or two sentences, in plain language, from the user's point of view. No
-technology choices here (see `../process.md`, step 1).
+technology choices here (see `../../process.md`, step 1).
 
 ## User experience
 
